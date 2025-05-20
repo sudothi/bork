@@ -2,9 +2,9 @@ import discord
 from discord.ext import commands
 import requests
 
-RIOT_API_KEY = 'RGAPI-37dfa32a-d474-4172-add6-c111a9aad636'
+RIOT_API_KEY = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
-DISCORD_TOKEN = "MTM2NjE4NTk0MzcyNzQ3MjY0MA.GmlCpB.GEff5oN-x_wsrJ2LNjVyTM6C2t6Zv1XhDrE_yU"
+DISCORD_TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 intents = discord.Intents.default()
 intents.message_content = True
