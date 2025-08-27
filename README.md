@@ -44,9 +44,9 @@ A Python GUI tool to automate parts of the League of Legends pre-game experience
 2.  **Run the Script**
     * Open a terminal in the script's folder and run:
         ```bash
-        python your_script_name.py
+        python bork.py
         ```
-    *(Replace `your_script_name.py` with the actual file name)*
+    *(Replace `bork.py` with the actual file name)*
 
 3.  **Configure and Activate**
     * Enter the champion names you wish to auto-ban and/or auto-pick.
@@ -65,7 +65,7 @@ To create a standalone executable that doesn't require Python to be installed:
     ```
 2.  **Run the compile command:**
     ```bash
-    pyinstaller --onefile --windowed --icon="your_icon.ico" your_script_name.py
+    pyinstaller --onefile --windowed --icon="icon.ico" bork.py
     ```
     The final `.exe` will be located in the `dist` folder.
 
