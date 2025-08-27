@@ -7,12 +7,9 @@ import os
 import urllib3
 import json
 
-# Desabilita avisos de segurança para conexões locais
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# --- CLASSE PARA GERENCIAR A COMUNICAÇÃO COM A API DO LOL ---
 class LCU_Handler:
-    # (Nenhuma mudança nesta classe, ela continua igual)
     def __init__(self):
         self.port = None
         self.auth_key = None
@@ -99,7 +96,6 @@ class LCU_Handler:
         payload = {"championId": champion_id, "completed": True}
         return self.make_request('PATCH', endpoint, payload)
 
-# --- CLASSE DA INTERFACE GRÁFICA (COM CORREÇÕES VISUAIS) ---
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -118,11 +114,9 @@ class App(ctk.CTk):
         self.auto_ban_enabled = ctk.BooleanVar(value=False)
         self.auto_pick_enabled = ctk.BooleanVar(value=False)
 
-        # --- Componentes da Interface ---
         self.title_label = ctk.CTkLabel(self, text="bork by @islazed", font=ctk.CTkFont(size=20, weight="bold"), text_color=self.TEXT_COLOR)
         self.title_label.pack(pady=10)
         
-        # --- Frame para Auto-Accept ---
         self.accept_frame = ctk.CTkFrame(self, border_width=2, border_color=self.BORDER_COLOR)
         self.accept_frame.pack(pady=5, padx=10, fill="x")
         self.accept_label = ctk.CTkLabel(self.accept_frame, text="queue autoaccept", font=ctk.CTkFont(size=14), text_color=self.TEXT_COLOR)
@@ -130,32 +124,26 @@ class App(ctk.CTk):
         self.accept_switch = ctk.CTkSwitch(self.accept_frame, text="", variable=self.auto_accept_enabled, command=self.on_toggle)
         self.accept_switch.pack(side="right", padx=15, pady=10)
 
-        # --- Frame para Auto-Ban ---
         self.ban_frame = ctk.CTkFrame(self, border_width=2, border_color=self.BORDER_COLOR)
         self.ban_frame.pack(pady=5, padx=10, fill="x")
-        # Configura o grid interno do frame de ban
-        self.ban_frame.grid_columnconfigure(1, weight=1) # Faz a coluna do meio (entry) expandir
+        self.ban_frame.grid_columnconfigure(1, weight=1)
 
         self.ban_label = ctk.CTkLabel(self.ban_frame, text="champion ban:", font=ctk.CTkFont(size=14), text_color=self.TEXT_COLOR)
         self.ban_label.grid(row=0, column=0, padx=(15, 5), pady=10)
         
-        # <<< CORREÇÃO AQUI: O pai do Entry agora é 'self.ban_frame' >>>
         self.ban_entry = ctk.CTkEntry(self.ban_frame, placeholder_text="Ex: Yasuo", border_width=2, border_color=self.BORDER_COLOR)
         self.ban_entry.grid(row=0, column=1, padx=5, pady=10, sticky="ew")
 
         self.ban_switch = ctk.CTkSwitch(self.ban_frame, text="", variable=self.auto_ban_enabled, command=self.on_toggle)
         self.ban_switch.grid(row=0, column=2, padx=15, pady=10)
 
-        # --- Frame para Auto-Pick ---
         self.pick_frame = ctk.CTkFrame(self, border_width=2, border_color=self.BORDER_COLOR)
         self.pick_frame.pack(pady=5, padx=10, fill="x")
-        # Configura o grid interno do frame de pick
-        self.pick_frame.grid_columnconfigure(1, weight=1) # Faz a coluna do meio (entry) expandir
+        self.pick_frame.grid_columnconfigure(1, weight=1)
 
         self.pick_label = ctk.CTkLabel(self.pick_frame, text="champion pick:", font=ctk.CTkFont(size=14), text_color=self.TEXT_COLOR)
         self.pick_label.grid(row=0, column=0, padx=(15, 5), pady=10)
 
-        # <<< CORREÇÃO AQUI: O pai do Entry agora é 'self.pick_frame' >>>
         self.pick_entry = ctk.CTkEntry(self.pick_frame, placeholder_text="Ex: Lux", border_width=2, border_color=self.BORDER_COLOR)
         self.pick_entry.grid(row=0, column=1, padx=5, pady=10, sticky="ew")
 
@@ -177,7 +165,7 @@ class App(ctk.CTk):
             self.status_label.configure(text="Todas as funções desligadas.", text_color="gray50")
 
     def main_loop(self):
-        self.status_label.configure(text="Conectando ao cliente do LoL...", text_color="#E87500") # Laranja
+        self.status_label.configure(text="Conectando ao cliente do LoL...", text_color="#E87500") 
         
         success, message = self.lcu.get_auth()
         if not success:
@@ -244,10 +232,10 @@ class App(ctk.CTk):
         self.ban_switch.deselect()
         self.pick_switch.deselect()
 
-# --- INICIA A APLICAÇÃO ---
 if __name__ == "__main__":
     ctk.set_appearance_mode("light")
     ctk.set_default_color_theme("blue")
     
     app = App()
+
     app.mainloop()
