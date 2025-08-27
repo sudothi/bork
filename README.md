@@ -7,7 +7,7 @@ A Python GUI tool to automate parts of the League of Legends pre-game experience
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 | :--- | :--- |
@@ -18,7 +18,7 @@ A Python GUI tool to automate parts of the League of Legends pre-game experience
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ A Python GUI tool to automate parts of the League of Legends pre-game experience
 
 ---
 
-## 🎮 How to Use
+##  How to Use
 
 1.  **Run the League Client**
     * Make sure the League of Legends client is open and you are logged in.
@@ -55,7 +55,7 @@ A Python GUI tool to automate parts of the League of Legends pre-game experience
 
 ---
 
-## 📦 Compiling to .exe (Optional)
+##  Compiling to .exe (Optional)
 
 To create a standalone executable that doesn't require Python to be installed:
 
@@ -71,6 +71,6 @@ To create a standalone executable that doesn't require Python to be installed:
 
 ---
 
-> ### ⚠️ Disclaimer
+> ###  Disclaimer
 >
 > This tool interacts with the local LCU API and is not affiliated with or endorsed by Riot Games. It does not interfere with gameplay. Use at your own risk. Incorrect usage (e.g., typos in champion names) may result in queue dodges.
