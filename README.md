@@ -1,6 +1,4 @@
-=========================
-  LoL Queue Assistant
-=========================
+LoL Queue Assistant
 
 A Python-based GUI tool to automate parts of the League of Legends pre-game experience, including accepting queues and handling champion picks & bans.
 
